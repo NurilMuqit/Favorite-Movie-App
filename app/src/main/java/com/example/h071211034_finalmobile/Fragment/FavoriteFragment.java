@@ -1,4 +1,4 @@
-package com.example.h071211034_finalmobile;
+package com.example.h071211034_finalmobile.Fragment;
 
 import android.os.Bundle;
 
@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MovieFragment extends Fragment {
+import com.example.h071211034_finalmobile.R;
+
+public class FavoriteFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_movie, container, false);
+        return inflater.inflate(R.layout.fragment_favorite, container, false);
     }
 }

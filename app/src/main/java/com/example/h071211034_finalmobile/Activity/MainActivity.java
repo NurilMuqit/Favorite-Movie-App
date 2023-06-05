@@ -1,4 +1,4 @@
-package com.example.h071211034_finalmobile;
+package com.example.h071211034_finalmobile.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.h071211034_finalmobile.Fragment.FavoriteFragment;
+import com.example.h071211034_finalmobile.Fragment.MovieFragment;
+import com.example.h071211034_finalmobile.R;
+import com.example.h071211034_finalmobile.Fragment.TvSeriesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
