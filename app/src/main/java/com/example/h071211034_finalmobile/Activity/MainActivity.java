@@ -2,10 +2,12 @@ package com.example.h071211034_finalmobile.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.h071211034_finalmobile.Adapter.MovieAdapter;
 import com.example.h071211034_finalmobile.Fragment.FavoriteFragment;
 import com.example.h071211034_finalmobile.Fragment.MovieFragment;
 import com.example.h071211034_finalmobile.R;
@@ -19,12 +21,10 @@ public class MainActivity extends AppCompatActivity {
     MovieFragment movieFragment = new MovieFragment();
     TvSeriesFragment tvSeriesFragment = new TvSeriesFragment();
     FavoriteFragment favoriteFragment = new FavoriteFragment();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         bnv = findViewById(R.id.bottom_nav);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container,movieFragment).commit();
