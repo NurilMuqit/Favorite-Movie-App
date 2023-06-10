@@ -4,8 +4,8 @@
     android:id="@+id/movie_list"
     android:layout_width="170dp"
     android:layout_height="340dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     android:layout_marginTop="20dp">
 
         <LinearLayout
