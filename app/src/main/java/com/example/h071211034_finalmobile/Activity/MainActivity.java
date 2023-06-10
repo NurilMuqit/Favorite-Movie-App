@@ -29,22 +29,19 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container,movieFragment).commit();
 
-        bnv.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.movie:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,movieFragment).commit();
-                        return true;
-                    case R.id.tv_series:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,tvSeriesFragment).commit();
-                        return true;
-                    case R.id.favorite:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,favoriteFragment).commit();
-                        return true;
-                }
-                return false;
+        bnv.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.movie:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,movieFragment).commit();
+                    return true;
+                case R.id.tv_series:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,tvSeriesFragment).commit();
+                    return true;
+                case R.id.favorite:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container,favoriteFragment).commit();
+                    return true;
             }
+            return false;
         });
     }
 }

@@ -1,6 +1,7 @@
 package com.example.h071211034_finalmobile.Adapter;
 
-import android.content.Context;
+import static com.example.h071211034_finalmobile.Server.ServerConfig.IMG_BASE_URL;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.h071211034_finalmobile.R;
-import com.example.h071211034_finalmobile.model.Movie;
 import com.example.h071211034_finalmobile.model.MovieResponse;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -18,10 +19,10 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
 
-    private List<Movie> resultList;
+    private List<MovieResponse> dataMovie;
 
-    public MovieAdapter(Context context, List<Movie> resultList) {
-
+    public MovieAdapter(List<MovieResponse> dataMovie) {
+        this.dataMovie =dataMovie;
     }
 
     @NonNull
@@ -37,12 +38,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Movie movieResponse = resultList.get(position);
+        MovieResponse movieResponse = dataMovie.get(position);
+        holder.movie_name.setText(movieResponse.getTitle());
+        holder.movie_date.setText(movieResponse.getRelease_date().substring(0,4));
+        Glide.with(holder.itemView.getContext()).load(IMG_BASE_URL +movieResponse.getPoster_path()).into(holder.movie_poster);
     }
 
     @Override
     public int getItemCount(){
-        return 0;
+        return dataMovie.size();
     }
     public class MyViewHolder extends RecyclerView.ViewHolder{
         ShapeableImageView movie_poster;

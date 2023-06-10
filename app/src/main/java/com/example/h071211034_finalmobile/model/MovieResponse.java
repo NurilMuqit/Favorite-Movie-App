@@ -11,16 +11,6 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class MovieResponse implements Parcelable {
-    public MovieResponse(int id, String backdrop_path, String title, String overview, String poster_path, String release_date, float vote_average) {
-        this.id = id;
-        this.backdrop_path = backdrop_path;
-        this.title = title;
-        this.overview = overview;
-        this.poster_path = poster_path;
-        this.release_date = release_date;
-        this.vote_average = vote_average;
-    }
-
     @SerializedName("id")
     private int id;
     @SerializedName("backdrop_path")
@@ -35,6 +25,34 @@ public class MovieResponse implements Parcelable {
     private String release_date;
     @SerializedName("vote_average")
     private float vote_average;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public String getPoster_path() {
+        return poster_path;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public float getVote_average() {
+        return vote_average;
+    }
 
     protected MovieResponse(Parcel in) {
         id = in.readInt();
